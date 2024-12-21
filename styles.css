@@ -1,0 +1,212 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: black;
+    overflow: hidden;
+}
+
+
+
+
+/* Scene container */
+#scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+
+#character-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    z-index: 2;
+}
+
+/* character */
+#character-image {
+    max-height: 40%; 
+    max-width: 80%;
+    object-fit: contain;
+}
+
+#text-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    z-index: 3;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+    color: white; 
+}
+
+#text-box-title {
+    font-size: 1.8em; 
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 20px; 
+}
+
+
+#text-box-content {
+    font-size: 1.2em; 
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 20px; 
+}
+
+
+#text-box-options {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    margin-top: 10px;
+}
+
+#text-box-options button {
+    padding: 15px 30px; 
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    background-color: #444;
+    color: white;
+    border-radius: 10px; 
+    flex-grow: 1; 
+    margin: 0 10px; 
+    text-align: center;
+}
+
+
+#text-box-options button:hover {
+    background-color: #666;
+}
+
+/*This blink effect did not work, not sure why but we tried to implement it for the typewriter*/
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: white;
+    margin-left: 2px;
+    animation: blink 0.2s step-end infinite;
+}
+
+img[src=""] {
+    /* opacity: 0; */
+    display: none;
+}
+img {
+    position: relative;
+}
+
+img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: transparent;
+}
+
+#text-box.title {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#text-box-title.title {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+#text-box-content.title {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+#text-box-options.title button {
+    font-size: 2em;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#text-box-options.title button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+
+
+#text-box.end-screen {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#text-box-content.end-screen {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#text-box-options.end-screen button {
+    font-size: 1.5em;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#text-box-options.end-screen button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+
+
+
